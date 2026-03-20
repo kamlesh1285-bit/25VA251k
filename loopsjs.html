@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Loops--JavaScript provides several types of loops to execute a block of code repeatedly until a specific condition is met. These loops are essential for tasks such as iterating over arrays, objects, or performing actions a set number of times
+
+        // For Loops-- for loop: Used when the number of iterations is known in advance. Its syntax is concise, combining initialization, a condition, and an update expression in one line: for (initialization; condition; increment/decrement).
+        for (let i = 0; i < 3; i++) {
+            console.log("Count:", i);
+        }
+        // Output:
+        // Count: 0
+        // Count: 1
+        // Count: 2 
+
+
+        // While loop--while loop: Repeats a block of code as long as a specified condition evaluates to true. It's useful when the number of iterations is not predetermined.
+        i = 0;
+        while (i < 3) {
+            console.log("Number:", i);
+            i++;
+        }
+        // Output:
+        // Number: 0
+        // Number: 1
+        // Number: 2
+
+
+        // do-while loop: Similar to the while loop, but the code block is executed at least once before the condition is checked. The loop continues as long as the condition is true. This is useful for menu systems or input validation that needs an initial prompt
+        let i = 0;
+        do {
+            console.log("Iteration:", i);
+            i++;
+        } while (i < 3);
+        // Output:
+        // Iteration: 0
+        // Iteration: 1
+        // Iteration: 2
+
+        //for...in loop: Iterates over the keys (property names) of an object
+
+        const person = { a: 1, b: 4, c: 7 };
+        for (let key in person) {
+            console.log(key + ": " + person[key]);
+        }
+        // Output:
+        // a: 1
+        // b: 4
+        // c: 7
+
+        // for...of loop: Iterates over the values of iterable objects like arrays, strings, and sets. This is generally the preferred way to loop through arrays as it is cleaner than a standard for loop and less error-prone than for...in.
+        const fruits = ['apple', 'banana', 'cherry'];
+        for (const fruit of fruits) {
+            console.log(fruit);
+        }
+        // Output:
+        // apple
+        // banana
+        // cherry
+
+    </script>
+
+
+</body>
+
+</html>
