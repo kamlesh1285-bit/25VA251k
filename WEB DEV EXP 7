@@ -1,0 +1,25 @@
+jsx 
+ import React from 'react'
+ import './StudentCard.css';
+ function StudentCard(props) {
+ return (
+ <div className="student-card">
+ <h2>Student Details</h2>
+ <p><strong>Name:</strong> {props.name}</p>
+ <p><strong>Course:</strong> {props.course}</p>
+ <p><strong>Marks:</strong> {props.marks}</p>
+ </div>
+ )
+ }
+ export default StudentCard
+.css 
+.student-container { display: flex; justify-content: center; gap: 20px; padding: 20px; }
+.student-card {
+ border: 2px solid #4CAF50;
+ padding: 15px;
+ border-radius: 10px;
+ width: 200px;
+ background-color: #f9f9f9;
+ box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+h2 { color: #333; font-size: 1.2rem; }
