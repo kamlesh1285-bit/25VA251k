@@ -1,0 +1,197 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Internal CSS -->
+    <style>
+        body{
+            background:#f8f9fa;
+        }
+
+        .card:hover{
+            transform:scale(1.05);
+            transition:0.3s;
+        }
+
+        footer{
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechStore</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Welcome to TechStore</h1>
+
+        <!-- PRODUCT SECTION -->
+        <div class="row">
+
+            <!-- Product 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200?text=Laptop" class="card-img-top" alt="Laptop">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Laptop
+                            <span class="badge bg-success">New</span>
+                        </h5>
+
+                        <p class="card-text">
+                            High-performance laptop for work and gaming.
+                        </p>
+
+                        <h6>₹55,000</h6>
+
+                        <button class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200?text=Smartphone" class="card-img-top" alt="Smartphone">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Smartphone
+                            <span class="badge bg-warning text-dark">Sale</span>
+                        </h5>
+
+                        <p class="card-text">
+                            Latest smartphone with excellent camera quality.
+                        </p>
+
+                        <h6>₹25,000</h6>
+
+                        <button class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://via.placeholder.com/300x200?text=Headphones" class="card-img-top" alt="Headphones">
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Headphones
+                            <span class="badge bg-danger">Hot</span>
+                        </h5>
+
+                        <p class="card-text">
+                            Wireless headphones with noise cancellation.
+                        </p>
+
+                        <h6>₹4,500</h6>
+
+                        <button class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productModal">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Product Details</h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        This product is available with premium quality,
+                        warranty support, and fast delivery.
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Close
+                    </button>
+
+                    <button type="button"
+                            class="btn btn-success">
+                        Buy Now
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; 2025 TechStore. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```

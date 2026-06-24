@@ -1,0 +1,135 @@
+```html id="s59a1t"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation and Event Handling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: white;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input {
+            padding: 8px;
+            width: 250px;
+            margin-bottom: 15px;
+        }
+
+        #para {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id="heading">Welcome to JavaScript DOM</h1>
+
+    <p id="para">
+        This paragraph can be modified using JavaScript events.
+    </p>
+
+    <input type="text" id="userInput" placeholder="Enter new heading text">
+
+    <br><br>
+
+    <button id="changeTextBtn">Change Heading</button>
+    <button id="changeColorBtn">Change Background</button>
+    <button id="fontSizeBtn">Increase Font Size</button>
+    <button id="toggleBtn">Show / Hide Paragraph</button>
+    <button id="resetBtn">Reset</button>
+
+</div>
+
+<script>
+
+    const heading = document.getElementById("heading");
+    const paragraph = document.getElementById("para");
+    const input = document.getElementById("userInput");
+
+    // Change Heading Text
+    document.getElementById("changeTextBtn")
+    .addEventListener("click", function() {
+
+        if(input.value !== "") {
+            heading.textContent = input.value;
+        } else {
+            alert("Please enter text!");
+        }
+
+    });
+
+    // Change Background Color
+    document.getElementById("changeColorBtn")
+    .addEventListener("click", function() {
+
+        document.body.style.backgroundColor = "lightblue";
+
+    });
+
+    // Increase Font Size
+    document.getElementById("fontSizeBtn")
+    .addEventListener("click", function() {
+
+        paragraph.style.fontSize = "28px";
+
+    });
+
+    // Show / Hide Paragraph
+    document.getElementById("toggleBtn")
+    .addEventListener("click", function() {
+
+        if(paragraph.style.display === "none") {
+            paragraph.style.display = "block";
+        } else {
+            paragraph.style.display = "none";
+        }
+
+    });
+
+    // Reset Page
+    document.getElementById("resetBtn")
+    .addEventListener("click", function() {
+
+        heading.textContent = "Welcome to JavaScript DOM";
+
+        paragraph.style.display = "block";
+        paragraph.style.fontSize = "18px";
+
+        document.body.style.backgroundColor = "white";
+
+        input.value = "";
+
+    });
+
+</script>
+
+</body>
+</html>
+```

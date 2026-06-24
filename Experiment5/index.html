@@ -1,0 +1,215 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container{
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        button{
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: #0056b3;
+        }
+
+        #output{
+            margin-top: 20px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+        }
+
+        th, td{
+            padding: 8px;
+            text-align: center;
+        }
+
+        th{
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Employee Management System</h2>
+
+    <button onclick="addEmployees()">Add Employees</button>
+    <button onclick="displayEmployees()">Display Employees</button>
+    <button onclick="filterEmployees()">Salary > ₹50,000</button>
+    <button onclick="salaryStatistics()">Salary Statistics</button>
+    <button onclick="countDepartment()">Count Department</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script>
+
+let employees = [];
+
+// Add Employee Details
+function addEmployees(){
+
+    let n = parseInt(prompt("Enter Number of Employees:"));
+
+    employees = [];
+
+    for(let i=0; i<n; i++){
+
+        let name = prompt("Enter Employee Name:");
+
+        let salary = parseFloat(
+            prompt("Enter Salary:")
+        );
+
+        let department = prompt(
+            "Enter Department:"
+        );
+
+        let employee = {
+            name: name,
+            salary: salary,
+            department: department
+        };
+
+        employees.push(employee);
+    }
+
+    alert("Employee Records Added Successfully!");
+}
+
+// Display Employees
+function displayEmployees(){
+
+    let html = `
+    <h3>Employee Records</h3>
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Department</th>
+    </tr>`;
+
+    employees.forEach(emp => {
+        html += `
+        <tr>
+            <td>${emp.name}</td>
+            <td>₹${emp.salary}</td>
+            <td>${emp.department}</td>
+        </tr>`;
+    });
+
+    html += "</table>";
+
+    document.getElementById("output").innerHTML = html;
+}
+
+// Filter Salary > 50000
+function filterEmployees(){
+
+    let filtered = employees.filter(
+        emp => emp.salary > 50000
+    );
+
+    let html = `
+    <h3>Employees with Salary > ₹50,000</h3>
+    <table>
+    <tr>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Department</th>
+    </tr>`;
+
+    filtered.forEach(emp => {
+        html += `
+        <tr>
+            <td>${emp.name}</td>
+            <td>₹${emp.salary}</td>
+            <td>${emp.department}</td>
+        </tr>`;
+    });
+
+    html += "</table>";
+
+    document.getElementById("output").innerHTML = html;
+}
+
+// Total and Average Salary
+function salaryStatistics(){
+
+    let totalSalary = employees.reduce(
+        (sum, emp) => sum + emp.salary, 0
+    );
+
+    let averageSalary =
+        totalSalary / employees.length;
+
+    document.getElementById("output").innerHTML =
+    `
+    <h3>Salary Statistics</h3>
+    <p><strong>Total Salary:</strong> ₹${totalSalary}</p>
+    <p><strong>Average Salary:</strong> ₹${averageSalary.toFixed(2)}</p>
+    `;
+}
+
+// Count Employees in Department
+function countDepartment(){
+
+    let dept = prompt(
+        "Enter Department Name:"
+    );
+
+    let count = employees.filter(
+        emp => emp.department.toLowerCase() === dept.toLowerCase()
+    ).length;
+
+    document.getElementById("output").innerHTML =
+    `
+    <h3>Department Count</h3>
+    <p>Employees in ${dept}: <strong>${count}</strong></p>
+    `;
+}
+
+</script>
+
+</body>
+</html>
+```
